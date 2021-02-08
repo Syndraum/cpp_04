@@ -24,3 +24,36 @@ AWeapon &	AWeapon::operator=(AWeapon const & rhs)
 	}
 	return *this;
 }
+
+std::string	AWeapon::getName(void) const
+{
+	return this->_name;
+}
+
+int		AWeapon::setName(std::string Name)
+{
+	this->_name = Name;
+	return 0;
+}
+
+int		AWeapon::getAPCost(void) const
+{
+	return this->_APCost;
+}
+
+int		AWeapon::setAPCost(int APCost)
+{
+	this->_APCost = APCost;
+	return 0;
+}
+
+int		AWeapon::getDamage(void) const
+{
+	return this->_damage;
+}
+
+int		AWeapon::setDamage(int Damage)
+{
+	this->_damage = Damage;
+	return 0;
+}
