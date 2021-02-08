@@ -8,9 +8,8 @@
 
 class Sorcerer
 {
-public:
-
 	Sorcerer(void);
+public:
 	Sorcerer(std::string name, std::string title);
 	Sorcerer(Sorcerer const & src);
 	~Sorcerer(void);

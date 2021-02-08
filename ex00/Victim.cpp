@@ -1,6 +1,6 @@
 #include "Victim.hpp"
 
-Victim::Victim(void){}
+Victim::Victim(void) : _name("Slave") {}
 
 Victim::Victim(std::string name) : _name(name)
 {
