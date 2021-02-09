@@ -16,7 +16,6 @@ public:
 	AWeapon &	operator=(AWeapon const &rhs);
 
 	std::string	getName(void) const;
-	int	setName(std::string Name);
 	int	getAPCost(void) const;
 	int	setAPCost(int APCost);
 	int	getDamage(void) const;
@@ -24,7 +23,7 @@ public:
 	virtual void	attack() const = 0;
 
 protected:
-	std::string	_name;
+	std::string	const _name;
 	int			_APCost;
 	int			_damage;
 };
