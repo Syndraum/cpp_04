@@ -2,7 +2,6 @@
 # define PLASMARIFLE
 
 # include "AWeapon.hpp"
-# include <iostream>
 
 class PlasmaRifle : public AWeapon
 {

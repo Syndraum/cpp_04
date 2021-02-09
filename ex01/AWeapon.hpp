@@ -2,6 +2,7 @@
 # define AWEAPON
 
 # include <string>
+# include <iostream>
 
 class AWeapon
 {
