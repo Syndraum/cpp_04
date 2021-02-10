@@ -4,23 +4,25 @@
 #include "Enemy.hpp"
 #include "SuperMutant.hpp"
 #include "RadScorpion.hpp"
-
+#include "Character.hpp"
 
 int main()
 {
 	PlasmaRifle plasmaRifle;
 	PowerFist	powerFist;
 	SuperMutant	superMutant;
+	std::cout << superMutant << std::endl;
 	RadScorpion	radScorpion;
+	std::cout << radScorpion << std::endl;
+	Character	hero("Frank");
 
-	plasmaRifle.attack();
-	powerFist.attack();
-	std::cout << superMutant << std::endl;
-	superMutant.takeDamage(20);
-	std::cout << superMutant << std::endl;
-	std::cout << radScorpion << std::endl;
-	radScorpion.takeDamage(20);
-	std::cout << radScorpion << std::endl;
+	std::cout << hero <<std::endl;
+	hero.attack(&radScorpion);
+	hero.equip(&plasmaRifle);
+	std::cout << hero <<std::endl;
+	hero.attack(&radScorpion);
+	std::cout << radScorpion << std::endl << hero <<std::endl;
+	
 
 	return (0);
 }
