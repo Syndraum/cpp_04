@@ -6,7 +6,6 @@
 
 class AWeapon
 {
-	
 protected:
 	AWeapon(void);
 public:

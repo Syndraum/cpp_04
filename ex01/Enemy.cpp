@@ -33,7 +33,7 @@ int		Enemy::getHP(void) const
 
 int		Enemy::setHP(int HP)
 {
-	if (HP > 0)
+	if (HP < 0)
 		HP = 0;
 	this->_HP = HP;
 	return 0;
@@ -41,7 +41,13 @@ int		Enemy::setHP(int HP)
 
 void	Enemy::takeDamage(int damage)
 {
-	if (damage > 0)
+	if (damage < 0)
 		return;
 	setHP( _HP - damage); 
+}
+
+std::ostream & operator<<(std::ostream & o, Enemy const & enemy)
+{
+	o << "Enemy of type " << enemy.getType() << " with " << enemy.getHP() << "HP";
+	return o;
 }

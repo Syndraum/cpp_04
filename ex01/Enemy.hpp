@@ -1,13 +1,15 @@
 #ifndef ENEMY
 # define ENEMY
 
-#include <string>
+# include <string>
+# include <iostream>
 
 class Enemy
 {
+protected:
+	Enemy(void);
 public:
 
-	Enemy(void);
 	Enemy(int hp, std::string const & type);
 	Enemy(Enemy const & src);
 	virtual ~Enemy(void);
@@ -22,5 +24,7 @@ private:
 	std::string const	_type;
 	int					_HP;
 };
+
+std::ostream & operator<<(std::ostream & o, Enemy const &rhs);
 
 #endif

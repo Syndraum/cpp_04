@@ -2,18 +2,25 @@
 #include "PlasmaRifle.hpp"
 #include "PowerFist.hpp"
 #include "Enemy.hpp"
+#include "SuperMutant.hpp"
+#include "RadScorpion.hpp"
+
 
 int main()
 {
 	PlasmaRifle plasmaRifle;
 	PowerFist	powerFist;
-	Enemy		enemy;
+	SuperMutant	superMutant;
+	RadScorpion	radScorpion;
 
 	plasmaRifle.attack();
 	powerFist.attack();
-	enemy.takeDamage(20);
-
-	std::cout << enemy.getType() << std::endl;
+	std::cout << superMutant << std::endl;
+	superMutant.takeDamage(20);
+	std::cout << superMutant << std::endl;
+	std::cout << radScorpion << std::endl;
+	radScorpion.takeDamage(20);
+	std::cout << radScorpion << std::endl;
 
 	return (0);
 }
