@@ -8,22 +8,48 @@
 
 int main()
 {
-	PlasmaRifle plasmaRifle;
-	PowerFist	powerFist;
-	SuperMutant	superMutant;
-	std::cout << superMutant << std::endl;
-	RadScorpion	radScorpion;
-	std::cout << radScorpion << std::endl;
-	Character	hero("Frank");
+	Character* moi = new Character("moi");
 
-	std::cout << hero <<std::endl;
-	hero.attack(&radScorpion);
-	hero.equip(&plasmaRifle);
-	std::cout << hero <<std::endl;
-	hero.attack(&radScorpion);
-	std::cout << radScorpion << std::endl << hero <<std::endl;
-	
+	std::cout << *moi;\
+	Enemy* b = new RadScorpion();
+	AWeapon* pr = new PlasmaRifle();
+	AWeapon* pf = new PowerFist();
+	moi->equip(pr);
+	std::cout << *moi;
+	moi->equip(pf);
 
+	moi->attack(b);
+	std::cout << *moi;
+	moi->equip(pr);
+	std::cout << *moi;
+	moi->attack(b);
+	std::cout << *moi;
+	moi->attack(b);
+	std::cout << *moi;
+
+	SuperMutant *	superMutant = new SuperMutant();
+	std::cout << superMutant;
+
+	std::cout << *moi;
+	moi->attack(superMutant);
+	std::cout << superMutant << *moi;
+	moi->equip(pf);
+	moi->attack(superMutant);
+	moi->attack(superMutant);
+	std::cout << superMutant << *moi;
+	moi->recoverAP();
+	std::cout << *moi;
+	moi->recoverAP();
+	moi->recoverAP();
+	moi->recoverAP();
+	std::cout << *moi;
+	moi->attack(superMutant);
+	std::cout << superMutant << *moi;
+	moi->attack(superMutant);
+	moi->attack(superMutant);
+
+	delete pr;
+	delete pf;
 	return (0);
 }
 

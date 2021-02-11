@@ -48,6 +48,6 @@ void	Enemy::takeDamage(int damage)
 
 std::ostream & operator<<(std::ostream & o, Enemy const & enemy)
 {
-	o << "Enemy of type " << enemy.getType() << " with " << enemy.getHP() << "HP";
+	o << "Enemy of type " << enemy.getType() << " with " << enemy.getHP() << "HP" << std::endl;
 	return o;
 }

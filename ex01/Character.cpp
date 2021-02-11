@@ -40,6 +40,8 @@ void		Character::attack(Enemy * enemy)
 	_weapon->attack();
 	setAP(_AP - getWeapon()->getAPCost());
 	enemy->takeDamage(getWeapon()->getDamage());
+	if (enemy->getHP() == 0)
+		enemy->~Enemy();
 }
 
 std::string	Character::getName(void) const
@@ -78,6 +80,6 @@ std::ostream & operator<<(std::ostream & o, Character const & character)
 	std::string nameWeapon = "is unarmed";
 	if (character.getWeapon() != 0)
 		nameWeapon = std::string("carries ") + character.getWeapon()->getName();
-	o << character.getName() << " has " << character.getAP() << " AP and " << nameWeapon;
+	o << character.getName() << " has " << character.getAP() << " AP and " << nameWeapon << std::endl;
 	return o;
 }
