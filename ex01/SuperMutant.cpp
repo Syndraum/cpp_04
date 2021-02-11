@@ -2,7 +2,7 @@
 
 SuperMutant::SuperMutant(void) : Enemy(170, "Super Mutant")
 {
-	std::cout << "Gaaah. Break everything " << std::endl;
+	std::cout << "Gaaah. Break everything!" << std::endl;
 }
 
 SuperMutant::SuperMutant(SuperMutant const & src)
