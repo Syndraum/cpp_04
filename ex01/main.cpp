@@ -28,15 +28,15 @@ int main()
 	std::cout << *moi;
 
 	SuperMutant *	superMutant = new SuperMutant();
-	std::cout << superMutant;
+	std::cout << *superMutant;
 
 	std::cout << *moi;
 	moi->attack(superMutant);
-	std::cout << superMutant << *moi;
+	std::cout << *superMutant << *moi;
 	moi->equip(pf);
 	moi->attack(superMutant);
 	moi->attack(superMutant);
-	std::cout << superMutant << *moi;
+	std::cout << *superMutant << *moi;
 	moi->recoverAP();
 	std::cout << *moi;
 	moi->recoverAP();
@@ -44,7 +44,7 @@ int main()
 	moi->recoverAP();
 	std::cout << *moi;
 	moi->attack(superMutant);
-	std::cout << superMutant << *moi;
+	std::cout << *superMutant << *moi;
 	moi->attack(superMutant);
 	moi->attack(superMutant);
 

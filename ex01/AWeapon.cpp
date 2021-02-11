@@ -50,3 +50,9 @@ int		AWeapon::setDamage(int Damage)
 	this->_damage = Damage;
 	return 0;
 }
+
+
+std::string AWeapon::getColorName(void) const
+{
+	return "\033[0;33m" + _name + "\033[0;37m";
+}

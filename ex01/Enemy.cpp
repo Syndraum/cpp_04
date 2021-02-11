@@ -1,8 +1,8 @@
 #include "Enemy.hpp"
 
-Enemy::Enemy(void): _type("Skeleton"), _HP(40) {}
+Enemy::Enemy(void): _type("Skeleton"), _HP(40), _color("31"){}
 
-Enemy::Enemy(int hp, std::string const & type) : _type(type), _HP(hp) {}
+Enemy::Enemy(int hp, std::string const & type) : _type(type), _HP(hp), _color("31") {}
 
 Enemy::Enemy(Enemy const & src)
 {
@@ -46,8 +46,13 @@ void	Enemy::takeDamage(int damage)
 	setHP( _HP - damage); 
 }
 
+std::string Enemy::getColorType() const
+{
+	return "\033[0;" + _color + "m" + _type + "\033[0;37m";
+}
+
 std::ostream & operator<<(std::ostream & o, Enemy const & enemy)
 {
-	o << "Enemy of type " << enemy.getType() << " with " << enemy.getHP() << "HP" << std::endl;
+	o << "Enemy of type " << enemy.getColorType() << " with " << enemy.getHP() << "HP" << std::endl;
 	return o;
 }

@@ -18,11 +18,13 @@ public:
 	std::string	getType(void) const;
 	int	getHP(void) const;
 	int	setHP(int HP);
+	std::string getColorType() const;
 
 	virtual void takeDamage(int);
 private:
 	std::string const	_type;
 	int					_HP;
+	std::string			_color;
 };
 
 std::ostream & operator<<(std::ostream & o, Enemy const &rhs);

@@ -17,6 +17,8 @@ Character::~Character(void)
 Character &	Character::operator=(Character const & rhs)
 {
 	if (this != &rhs){
+		_name = rhs._name;
+		_AP = rhs._AP;
 		_weapon = rhs._weapon;
 	}
 	return *this;
@@ -36,7 +38,11 @@ void		Character::attack(Enemy * enemy)
 {
 	if (_weapon == 0)
 		return ;
-	std::cout << _name << " attack " << enemy->getType() << " with a " << _weapon->getName() << std::endl;
+	if (enemy == 0)
+		return ;
+	if (enemy->getHP() == 0)
+		return ;
+	std::cout << getColorName() << " attack " << enemy->getColorType() << " with a " << _weapon->getColorName() << std::endl;
 	_weapon->attack();
 	setAP(_AP - getWeapon()->getAPCost());
 	enemy->takeDamage(getWeapon()->getDamage());
@@ -75,11 +81,17 @@ int			Character::setWeapon(AWeapon * weapon)
 	return 0;
 }
 
+std::string	Character::getColorName() const
+{
+
+	return "\033[0;34m" + _name + "\033[0;37m";
+}
+
 std::ostream & operator<<(std::ostream & o, Character const & character)
 {
 	std::string nameWeapon = "is unarmed";
 	if (character.getWeapon() != 0)
-		nameWeapon = std::string("carries ") + character.getWeapon()->getName();
-	o << character.getName() << " has " << character.getAP() << " AP and " << nameWeapon << std::endl;
+		nameWeapon = std::string("carries ") + character.getWeapon()->getColorName();
+	o << character.getColorName() << " has " << character.getAP() << " AP and " << nameWeapon << std::endl;
 	return o;
 }

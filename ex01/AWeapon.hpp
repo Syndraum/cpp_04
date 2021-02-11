@@ -20,6 +20,7 @@ public:
 	int	getDamage(void) const;
 	int	setDamage(int Damage);
 	virtual void	attack() const = 0;
+	std::string getColorName(void) const;
 
 protected:
 	std::string	const _name;

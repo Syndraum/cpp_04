@@ -20,14 +20,16 @@ public:
 	int	setAP(int AP);
 	AWeapon	* getWeapon(void) const;
 	int setWeapon(AWeapon * wepon);
+	std::string	getColorName() const;
 
 	void	recoverAP();
 	void	equip(AWeapon * weapon);
 	void	attack(Enemy * enemy);
 private:
-	std::string const	_name;
+	std::string			_name;
 	int					_AP;
 	AWeapon *			_weapon;
+
 };
 
 std::ostream & operator<<(std::ostream & o, Character const & character);
