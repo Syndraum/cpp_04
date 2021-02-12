@@ -1,29 +1,31 @@
 #include "Squad.hpp"
 
-Squad::Squad(void) : _list(0) {}
+Squad::Squad(void) : _list(0) {
+	// std::cout << "LOl\n";
+}
 
-Squad::Squad(Squad const & src)
+Squad::Squad(Squad const & src) : _list(0)
 {
 	*this = src;
 }
 
 Squad::~Squad(void)
 {
-	List *cursor = this->_list;
-	List *prec;
-
-	while (cursor !=0)
-	{
-		prec = cursor;
-		cursor = cursor->_next;
-		delete prec;
-	}
+	delList();
 }
 
 Squad &	Squad::operator=(Squad const & rhs)
 {
-	if (this != &rhs)
-		this->_list = rhs._list;
+	if (this->_list != 0)
+		delList();
+	this->_list = 0;
+	List * cursor = rhs._list;
+	if (this != &rhs){
+		while (cursor != 0){
+			this->push(cursor->_unit->clone());
+			cursor = cursor->_next;
+		}
+	}
 	return *this;
 }
 
@@ -63,7 +65,6 @@ int				Squad::push(ISpaceMarine* unit)
 		_list = node;
 	else
 		_list->end()->_next = node;
-	// delete node;
 	return 0;
 }
 
@@ -80,6 +81,19 @@ bool			Squad::isInSquad(ISpaceMarine * unit)
 		cursor = cursor->_next;
 	}
 	return false;
+}
+
+void			Squad::delList()
+{
+	List *cursor = this->_list;
+	List *prec;
+
+	while (cursor !=0)
+	{
+		prec = cursor;
+		cursor = cursor->_next;
+		delete prec;
+	}
 }
 
 List::List(ISpaceMarine * unit) : _unit(unit), _next(0) {}

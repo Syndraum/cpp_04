@@ -12,7 +12,7 @@ struct List
 	ISpaceMarine *	_unit;
 	List * 			_next;
 
-	List * end();
+	List *	end();
 };
 
 class Squad: public ISquad
@@ -30,6 +30,7 @@ private:
 	List * _list;
 
 	bool isInSquad(ISpaceMarine* unit);
+	void	delList();
 };
 
 #endif
