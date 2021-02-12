@@ -1,8 +1,6 @@
 #include "Squad.hpp"
 
-Squad::Squad(void) : _list(0) {
-	// std::cout << "LOl\n";
-}
+Squad::Squad(void) : _list(0) {}
 
 Squad::Squad(Squad const & src) : _list(0)
 {

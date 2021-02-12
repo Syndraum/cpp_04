@@ -2,6 +2,8 @@
 # define ASSAULTTERMINATOR
 
 # include "ISpaceMarine.hpp"
+# define RED "\033[0;31m"
+# define RESET "\033[0;37m"
 
 class AssaultTerminator: public ISpaceMarine
 {

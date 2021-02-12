@@ -2,6 +2,8 @@
 # define TACTICALMARINE
 
 # include "ISpaceMarine.hpp"
+# define BLUE "\033[0;34m"
+# define RESET "\033[0;37m"
 
 class TacticalMarine : public ISpaceMarine
 {

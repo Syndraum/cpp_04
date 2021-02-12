@@ -2,7 +2,7 @@
 
 AssaultTerminator::AssaultTerminator(void)
 {
-	std::cout << "* teleports from space *" << std::endl;
+	std::cout << RED << "* teleports from space *" << RESET << std::endl;
 }
 
 AssaultTerminator::AssaultTerminator(AssaultTerminator const & src)
@@ -12,7 +12,7 @@ AssaultTerminator::AssaultTerminator(AssaultTerminator const & src)
 
 AssaultTerminator::~AssaultTerminator(void)
 {
-	std::cout << "I’ll be back ..." << std::endl;
+	std::cout << RED << "I’ll be back ..." << RESET << std::endl;
 }
 
 AssaultTerminator &	AssaultTerminator::operator=(AssaultTerminator const & rhs)
@@ -30,15 +30,15 @@ ISpaceMarine* AssaultTerminator::clone() const
 
 void AssaultTerminator::battleCry() const
 {
-	std::cout << "This code is unclean. Purify it !" << std::endl;
+	std::cout << RED << "This code is unclean. Purify it !" << RESET << std::endl;
 }
 
 void AssaultTerminator::rangedAttack() const
 {
-	std::cout << "* does nothing *" << std::endl;
+	std::cout << RED << "* does nothing *" << RESET << std::endl;
 }
 
 void AssaultTerminator::meleeAttack() const
 {
-	std::cout << "* attaque with chainfists *" << std::endl;
+	std::cout << RED << "* attaque with chainfists *" << RESET << std::endl;
 }

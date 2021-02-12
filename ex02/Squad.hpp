@@ -2,8 +2,6 @@
 # define SQUAD
 
 # include "ISquad.hpp"
-# include "TacticalMarine.hpp"
-
 
 struct List
 {

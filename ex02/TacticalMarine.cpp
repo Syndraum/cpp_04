@@ -2,7 +2,7 @@
 
 TacticalMarine::TacticalMarine(void)
 {
-	std::cout << "Tactical Marine ready for action !" << std::endl;
+	std::cout << BLUE << "Tactical Marine" << RESET <<" ready for action !" << std::endl;
 }
 
 TacticalMarine::TacticalMarine(TacticalMarine const & src)
