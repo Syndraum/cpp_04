@@ -38,6 +38,13 @@ std::string const & Character::getName() const
 	return _name;
 }
 
+AMateria * Character::getMateria(int idx) const
+{
+	if (idx < 0 || idx >= NBR_MATERIA)
+		return 0;
+	return _list[idx];
+}
+
 void		Character::equip(AMateria * m)
 {
 	size_t i = 0;
@@ -70,7 +77,7 @@ void		Character::deleteMateria(void)
 	for (size_t i = 0; i < NBR_MATERIA; i++)
 	{
 		if (_list[i] != 0)
-		{
+		{ 
 			delete _list[i];
 			_list[i] = 0;
 		}
