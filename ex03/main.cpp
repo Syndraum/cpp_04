@@ -1,14 +1,20 @@
 #include "Ice.hpp"
 #include "Cure.hpp"
 #include "Character.hpp"
+#include "MateriaSource.hpp"
 
 int main()
 {
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+
 	ICharacter* moi = new Character("moi");
 
-	AMateria* tmp = new Ice();
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
 	moi->equip(tmp);
-	tmp = new Cure();
+	tmp = src->createMateria("cure");
 	moi->equip(tmp);
 
 	Character* bob = new Character("bob");
@@ -29,6 +35,7 @@ int main()
 	std::cout << *copy.getMateria(0);
 
 	delete moi;
+	delete src;
 
 	return 0;
 }
