@@ -42,3 +42,8 @@ void		AMateria::use(ICharacter & target)
 	target.getName();
 	setXP(getXP() + 10);
 }
+std::ostream & operator<<(std::ostream & o, AMateria const & materia)
+{
+	o << materia.getType() << " materia, XP : " << materia.getXP() << std::endl;
+	return o;
+}

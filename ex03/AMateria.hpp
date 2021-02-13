@@ -26,5 +26,6 @@ private:
 	std::string const  _type;
 	unsigned int _xp;
 };
+std::ostream & operator<<(std::ostream & o, AMateria const & materia);
 
 #endif
