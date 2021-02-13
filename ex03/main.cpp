@@ -25,7 +25,15 @@ int main()
 	std::cout << *moi->getMateria(0);
 	std::cout << *moi->getMateria(1);
 
-	tmp = new Cure();
+	tmp = src->createMateria("cure");
+	bob->equip(tmp);
+	tmp = src->createMateria("cure");
+	bob->equip(tmp);
+	tmp = src->createMateria("ice");
+	bob->equip(tmp);
+	tmp = src->createMateria("cure");
+	bob->equip(tmp);
+	tmp = src->createMateria("ice");
 	bob->equip(tmp);
 	Character copy("copy");
 	copy = *bob;
