@@ -11,15 +11,24 @@ int main()
 	tmp = new Cure();
 	moi->equip(tmp);
 
-	ICharacter* bob = new Character("bob");
+	Character* bob = new Character("bob");
 
 	moi->use(0, *bob);
 	moi->use(1, *bob);
 
-	delete bob;
-	delete moi;
+	std::cout << *moi->getMateria(0);
+	std::cout << *moi->getMateria(1);
 
-	std::cout << tmp->getType() << std::endl;
+	tmp = new Cure();
+	bob->equip(tmp);
+	Character copy("copy");
+	copy = *bob;
+
+	delete bob;
+
+	std::cout << *copy.getMateria(0);
+
+	delete moi;
 
 	return 0;
 }
