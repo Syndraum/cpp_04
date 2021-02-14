@@ -10,7 +10,7 @@ public:
 
 	MateriaSource(void);
 	MateriaSource(MateriaSource const & src);
-	~MateriaSource(void);
+	virtual ~MateriaSource(void);
 	MateriaSource &	operator=(MateriaSource const &rhs);
 
 	void learnMateria(AMateria *materia);

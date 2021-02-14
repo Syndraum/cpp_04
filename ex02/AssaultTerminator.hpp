@@ -11,7 +11,7 @@ public:
 
 	AssaultTerminator(void);
 	AssaultTerminator(AssaultTerminator const & src);
-	~AssaultTerminator(void);
+	virtual ~AssaultTerminator(void);
 	AssaultTerminator &	operator=(AssaultTerminator const &rhs);
 
 	ISpaceMarine* clone() const;

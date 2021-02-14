@@ -9,7 +9,7 @@ public:
 
 	PlasmaRifle(void);
 	PlasmaRifle(PlasmaRifle const & src);
-	~PlasmaRifle(void);
+	virtual ~PlasmaRifle(void);
 	PlasmaRifle &	operator=(PlasmaRifle const &rhs);
 	virtual void	attack() const;
 

@@ -10,7 +10,7 @@ public:
 	Peasant(void);
 	Peasant(std::string name);
 	Peasant(Peasant const & src);
-	~Peasant(void);
+	virtual ~Peasant(void);
 	Peasant &	operator=(Peasant const &rhs);
 
 	virtual void	getPolymorphed() const;
