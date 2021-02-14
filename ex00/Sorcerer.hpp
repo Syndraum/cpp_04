@@ -22,9 +22,11 @@ public:
 	std::string	getTitle(void) const;
 	int	setTitle(std::string Title);
 
+	std::string getColorName() const;
 private:
 	std::string	_name;
 	std::string _title;
+
 };
 
 std::ostream & operator<<(std::ostream & o, Sorcerer const &rhs);

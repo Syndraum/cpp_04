@@ -4,7 +4,7 @@ Sorcerer::Sorcerer(void){}
 
 Sorcerer::Sorcerer(std::string name, std::string title) : _name(name), _title(title)
 {
-	std::cout << _name << ", " << _title << ", is born!" << std::endl;
+	std::cout << getColorName() << ", " << _title << ", is born!" << std::endl;
 }
 
 Sorcerer::Sorcerer(Sorcerer const & src)
@@ -15,7 +15,7 @@ Sorcerer::Sorcerer(Sorcerer const & src)
 
 Sorcerer::~Sorcerer(void)
 {
-	std::cout << _name << ", " << _title << ", is died. Consequence will never be the same !" << std::endl;
+	std::cout << getColorName() << ", " << _title << ", is died. Consequence will never be the same !" << std::endl;
 }
 
 void	Sorcerer::polymorph(Victim const & victim)
@@ -25,7 +25,7 @@ void	Sorcerer::polymorph(Victim const & victim)
 
 std::ostream & operator<<(std::ostream & o, Sorcerer  const &rhs)
 {
-	o << "I am " << rhs.getName() << ", " << rhs.getTitle() << ", and i like ponies!" << std::endl;
+	o << "I am " << rhs.getColorName() << ", " << rhs.getTitle() << ", and i like ponies!" << std::endl;
 	return o;
 }
 
@@ -59,4 +59,9 @@ int		Sorcerer::setTitle(std::string Title)
 {
 	this->_title = Title;
 	return 0;
+}
+
+std::string Sorcerer::getColorName() const
+{
+	return "\033[0;35m" + _name + "\033[0;37m";
 }
