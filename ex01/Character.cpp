@@ -36,10 +36,8 @@ void		Character::equip(AWeapon * weapon)
 
 void		Character::attack(Enemy * enemy)
 {
-	if (_weapon == 0 || enemy == 0){
-		std::cout << "No weapon, impossible to attack" << std::endl;
+	if (_weapon == 0 || enemy == 0)
 		return ;
-	}
 	if (_weapon->getAPCost() > this->getAP()){
 		std::cout << "Not enought AP. " << _weapon->getAPCost() << " needed, you have " << this->getAP() << std::endl;
 		return ;
