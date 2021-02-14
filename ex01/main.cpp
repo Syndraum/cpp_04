@@ -1,9 +1,11 @@
 #include "AWeapon.hpp"
 #include "PlasmaRifle.hpp"
 #include "PowerFist.hpp"
+#include "SonicEmitter.hpp"
 #include "Enemy.hpp"
 #include "SuperMutant.hpp"
 #include "RadScorpion.hpp"
+#include "Cazador.hpp"
 #include "Character.hpp"
 
 int main()
@@ -48,8 +50,22 @@ int main()
 	moi->attack(superMutant);
 	moi->attack(superMutant);
 
+	Cazador * cazador = new Cazador();
+	std::cout << *cazador;
+	SonicEmitter * sc = new SonicEmitter();
+	moi->equip(sc);
+	std::cout << *moi;
+	moi->attack(cazador);
+	moi->recoverAP();
+	moi->attack(cazador);
+	moi->equip(0);
+	moi->attack(cazador);
+	moi->equip(pr);
+	moi->attack(cazador);
+
 	delete pr;
 	delete pf;
+	delete sc;
 	return (0);
 }
 

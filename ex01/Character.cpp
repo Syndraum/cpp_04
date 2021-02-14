@@ -36,10 +36,14 @@ void		Character::equip(AWeapon * weapon)
 
 void		Character::attack(Enemy * enemy)
 {
-	if (_weapon == 0)
+	if (_weapon == 0 || enemy == 0){
+		std::cout << "No weapon, impossible to attack" << std::endl;
 		return ;
-	if (enemy == 0)
+	}
+	if (_weapon->getAPCost() > this->getAP()){
+		std::cout << "Not enought AP. " << _weapon->getAPCost() << " needed, you have " << this->getAP() << std::endl;
 		return ;
+	}
 	if (enemy->getHP() == 0)
 		return ;
 	std::cout << getColorName() << " attack " << enemy->getColorType() << " with a " << _weapon->getColorName() << std::endl;
