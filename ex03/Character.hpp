@@ -24,7 +24,7 @@ public:
 	void use(int idx, ICharacter &target);
 private:
 	std::string const	_name;
-	AMateria *			_list[NBR_MATERIA];
+	AMateria *			_inventory[NBR_MATERIA];
 
 	void deleteMateria(void);
 };
