@@ -12,7 +12,7 @@ class Character
 public:
 	Character(std::string const & name);
 	Character(Character const & src);
-	~Character(void);
+	virtual ~Character(void);
 	Character &	operator=(Character const &rhs);
 
 	std::string	getName(void) const;

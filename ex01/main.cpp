@@ -12,7 +12,7 @@ int main()
 {
 	Character* moi = new Character("moi");
 
-	std::cout << *moi;\
+	std::cout << *moi;
 	Enemy* b = new RadScorpion();
 	AWeapon* pr = new PlasmaRifle();
 	AWeapon* pf = new PowerFist();
@@ -29,6 +29,7 @@ int main()
 	moi->attack(b);
 	std::cout << *moi;
 
+	std::cout << "\033[0;35m/////// ADDITIONAL TESTS ///////\033[0;37m" << std::endl;
 	SuperMutant *	superMutant = new SuperMutant();
 	std::cout << *superMutant;
 
@@ -66,6 +67,7 @@ int main()
 	delete pr;
 	delete pf;
 	delete sc;
+	delete moi;
 	return (0);
 }
 
