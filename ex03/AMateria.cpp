@@ -39,9 +39,10 @@ std::string	const & AMateria::getType(void) const
 
 void		AMateria::use(ICharacter & target)
 {
-	target.getName();
+	(void)target;
 	setXP(getXP() + 10);
 }
+
 std::ostream & operator<<(std::ostream & o, AMateria const & materia)
 {
 	o << materia.getType() << " materia, XP : " << materia.getXP() << std::endl;

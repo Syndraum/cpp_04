@@ -38,12 +38,12 @@ std::string const & Character::getName() const
 	return _name;
 }
 
-AMateria * Character::getMateria(int idx) const
-{
-	if (idx < 0 || idx >= NBR_MATERIA)
-		return 0;
-	return _list[idx];
-}
+// AMateria * Character::getMateria(int idx) const
+// {
+// 	if (idx < 0 || idx >= NBR_MATERIA)
+// 		return 0;
+// 	return _list[idx];
+// }
 
 void		Character::equip(AMateria * m)
 {
@@ -82,4 +82,23 @@ void		Character::deleteMateria(void)
 			_list[i] = 0;
 		}
 	}
+}
+
+AMateria *			Character::getMateria(int idx) const
+{
+	if (idx < 0 || idx > NBR_MATERIA)
+		return 0;
+	return this->_list[idx];
+}
+
+std::ostream & operator<<(std::ostream & o, Character const & character)
+{
+	AMateria * materia;
+	o << "Character name : " << character.getName() << std::endl ;
+	for (size_t i = 0; i < NBR_MATERIA; i++){
+		materia = character.getMateria(i);
+		if (materia != 0)
+			o << "\t" << i <<": " << materia->getType() << "\tXP : " << materia->getXP() << std::endl;
+	}
+	return o;
 }
