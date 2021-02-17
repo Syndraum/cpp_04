@@ -2,7 +2,7 @@
 #include "TacticalMarine.hpp"
 #include "AssaultTerminator.hpp"
 #define YELLOW "\033[0;33m"
-#define GREY "\033[0;90m"
+#define GREY "\033[0;35m"
 
 int main()
 {
@@ -22,10 +22,12 @@ int main()
 	}
 	delete vlc;
 
+	std::cout << GREY << "//////// ADDITIONAL TESTS ////////" << RESET << std::endl;
+	bob = new TacticalMarine;
 	Squad * squad = new Squad(); 
-	std::cout << GREY << "//////// ADD MARINE ////////" << RESET << std::endl;
+	squad->push(bob);
 	int i = -1;
-	while (++i < 5)
+	while (++i < 4)
 		squad->push(bob->clone());
 	std::cout << YELLOW << "Squad" << RESET << " count :" << squad->getCount() << std::endl;
 	std::cout << GREY << "//////// GetUnit ////////" << RESET << std::endl;
@@ -37,9 +39,9 @@ int main()
 	squad->getUnit(1)->battleCry();
 	std::cout << "Test : 3" << std::endl;
 	squad->getUnit(3)->battleCry();
-	std::cout << GREY << "//////// Copy ////////" << RESET << std::endl;
+	std::cout << GREY << "//////// COPY ////////" << RESET << std::endl;
 	Squad copy(*squad);
-	std::cout << GREY << "//////// delete squad ////////" << RESET << std::endl;
+	std::cout << GREY << "//////// DELETE SQUAD ////////" << RESET << std::endl;
 	delete squad;
 	std::cout << YELLOW << "Squad" << RESET << " count :" << copy.getCount() << std::endl;
 	return 0;

@@ -88,6 +88,7 @@ void			Squad::delList()
 
 	while (cursor !=0)
 	{
+		delete cursor->_unit;
 		prec = cursor;
 		cursor = cursor->_next;
 		delete prec;
@@ -102,4 +103,16 @@ List *List::end()
 	while (cursor->_next != 0)
 		cursor = cursor->_next;
 	return cursor;
+}
+
+int	List::len()
+{
+	int len = 0;
+
+	List * cursor = this;
+	while (cursor !=0){
+		cursor = cursor->_next;
+		len++;
+	}
+	return len;
 }

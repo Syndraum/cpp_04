@@ -11,6 +11,7 @@ struct List
 	List * 			_next;
 
 	List *	end();
+	int		len();
 };
 
 class Squad: public ISquad
