@@ -24,7 +24,7 @@ int main()
 
 	std::cout << GREY << "//////// ADDITIONAL TESTS ////////" << RESET << std::endl;
 	bob = new TacticalMarine;
-	Squad * squad = new Squad(); 
+	Squad * squad = new Squad();
 	squad->push(bob);
 	int i = -1;
 	while (++i < 4)
@@ -44,5 +44,12 @@ int main()
 	std::cout << GREY << "//////// DELETE SQUAD ////////" << RESET << std::endl;
 	delete squad;
 	std::cout << YELLOW << "Squad" << RESET << " count :" << copy.getCount() << std::endl;
+	std::cout << GREY << "//////// ASSIGNATION ////////" << RESET << std::endl;
+	jim = new AssaultTerminator;
+	Squad * terminaSquad = new Squad();
+	terminaSquad->push(jim);
+	copy = *terminaSquad;
+	std::cout << GREY << "//////// END TEST ////////" << RESET << std::endl;
+	delete terminaSquad;
 	return 0;
 }
