@@ -15,7 +15,7 @@ Sorcerer::Sorcerer(Sorcerer const & src)
 
 Sorcerer::~Sorcerer(void)
 {
-	std::cout << getColorName() << ", " << _title << ", is died. Consequence will never be the same !" << std::endl;
+	std::cout << getColorName() << ", " << _title << ", is died. Consequence will never be the same!" << std::endl;
 }
 
 void	Sorcerer::polymorph(Victim const & victim)

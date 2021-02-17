@@ -12,9 +12,10 @@ int main()
 	robert.polymorph(jim);
 	robert.polymorph(joe);
 
-	Peasant cony("Cony");
-	std::cout << cony;
-	robert.polymorph(cony);
+	Victim * cony = new Peasant("Cony");
+	std::cout << *cony;
+	robert.polymorph(*cony);
+	delete cony;
 	// Sorcerer impossible;
 	return 0;
 }
