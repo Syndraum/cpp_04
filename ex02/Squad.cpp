@@ -63,7 +63,7 @@ int				Squad::push(ISpaceMarine* unit)
 		_list = node;
 	else
 		_list->end()->_next = node;
-	return 0;
+	return _list->len();
 }
 
 bool			Squad::isInSquad(ISpaceMarine * unit)
