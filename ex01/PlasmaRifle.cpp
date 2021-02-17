@@ -2,7 +2,7 @@
 
 PlasmaRifle::PlasmaRifle(void) : AWeapon("Plasma Rifle", 5, 21) {}
 
-PlasmaRifle::PlasmaRifle(PlasmaRifle const & src)
+PlasmaRifle::PlasmaRifle(PlasmaRifle const & src) : AWeapon("Plasma Rifle", 5, 21)
 {
 	*this = src;
 }

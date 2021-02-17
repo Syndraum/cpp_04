@@ -15,7 +15,7 @@ public:
 	virtual ~Enemy(void);
 	Enemy &	operator=(Enemy const &rhs);
 
-	std::string	getType(void) const;
+	std::string	const & getType(void) const;
 	int	getHP(void) const;
 	int	setHP(int HP);
 	std::string getColorType() const;

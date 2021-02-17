@@ -21,7 +21,7 @@ Enemy &	Enemy::operator=(Enemy const & rhs)
 	return *this;
 }
 
-std::string	Enemy::getType(void) const
+std::string const &	Enemy::getType(void) const
 {
 	return this->_type;
 }

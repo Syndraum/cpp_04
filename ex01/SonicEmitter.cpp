@@ -2,7 +2,7 @@
 
 SonicEmitter::SonicEmitter(void) : AWeapon("Sonic emitter", 25, 50) {}
 
-SonicEmitter::SonicEmitter(SonicEmitter const & src)
+SonicEmitter::SonicEmitter(SonicEmitter const & src) : AWeapon("Sonic emitter", 25, 50)
 {
 	*this = src;
 }

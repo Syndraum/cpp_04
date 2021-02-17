@@ -5,7 +5,7 @@ Cazador::Cazador(void) : Enemy(70, "Cazador")
 	std::cout << "*Bzzzzzz*" << std::endl;
 }
 
-Cazador::Cazador(Cazador const & src)
+Cazador::Cazador(Cazador const & src) : Enemy(70, "Cazador")
 {
 	*this = src;
 }

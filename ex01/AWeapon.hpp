@@ -14,7 +14,7 @@ public:
 	virtual ~AWeapon(void);
 	AWeapon &	operator=(AWeapon const &rhs);
 
-	std::string	getName(void) const;
+	std::string const &	getName(void) const;
 	int	getAPCost(void) const;
 	int	setAPCost(int APCost);
 	int	getDamage(void) const;
@@ -23,7 +23,7 @@ public:
 	std::string getColorName(void) const;
 
 protected:
-	std::string	const _name;
+	std::string	_name;
 	int			_APCost;
 	int			_damage;
 };
