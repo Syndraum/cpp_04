@@ -50,7 +50,6 @@ void		Character::attack(Enemy * enemy)
 	enemy->takeDamage(getWeapon()->getDamage());
 	if (enemy->getHP() == 0)
 		delete enemy;
-		// enemy->~Enemy();
 }
 
 std::string	Character::getName(void) const

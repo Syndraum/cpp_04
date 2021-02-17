@@ -49,7 +49,6 @@ int main()
 	moi->attack(superMutant);
 	std::cout << *superMutant << *moi;
 	moi->attack(superMutant);
-	moi->attack(superMutant);
 
 	Cazador * cazador = new Cazador();
 	std::cout << *cazador;
